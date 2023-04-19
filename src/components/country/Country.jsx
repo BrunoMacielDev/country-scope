@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import styles from "./Country.module.css";
+import { VscSearch } from "react-icons/vsc";
+import { CgCornerDownLeft } from "react-icons/cg";
 
 function Country() {
   const [country, setCountry] = useState("");
@@ -34,30 +37,28 @@ function Country() {
 
   return (
     <>
-      <div className="country">
-        <div className="country-card">
-          <div className="country-column">
-            <h1>Country Scope</h1>
-            <p>Please, enter a country</p>
-            <form onSubmit={handleSubmit}>
-              <div className="form-item">
-                <input
-                  type="text"
-                  className="form-element"
-                  placeholder="Country Name"
-                  name="country"
-                  onChange={(e) => setCountry(e.target.value)}
-                  value={country}
-                />
-                <div className="flex">
-                  <button type="submit">Submit</button>
-                </div>
-              </div>
-            </form>
-          </div>
+      <div className={styles.country}>
+        <div className={styles.section}>
+          <h1>CountryScope</h1>
+          <p>Please, enter a country</p>
+          <form onSubmit={handleSubmit}>
+            <div className={styles.form}>
+              <VscSearch />
+              <input
+                type="text"
+                placeholder="Type to search..."
+                name="country"
+                onChange={(e) => setCountry(e.target.value)}
+                value={country}
+              />
+              <button type="submit">
+                <CgCornerDownLeft size={15} color="white"/>
+              </button>
+            </div>
+          </form>
         </div>
-        <div className="country-card">
-          <div className="country-column">
+        <div className={styles.card}>
+          <div className={styles.content}>
             {!commonName ? (
               <></>
             ) : (
@@ -66,23 +67,23 @@ function Country() {
                 <img src={flagURL} alt="bandera" />
                 <table>
                   <tr>
-                    <td>Capital</td>
+                    <td><img src="https://notion-emojis.s3-us-west-2.amazonaws.com/prod/svg-twitter/1f4cd.svg"/> Capital:</td>
                     <td>{capital}</td>
                   </tr>
                   <tr>
-                    <td>Continent</td>
+                    <td><img src="https://notion-emojis.s3-us-west-2.amazonaws.com/prod/svg-twitter/1f310.svg"/> Continent:</td>
                     <td>{continent}</td>
                   </tr>
                   <tr>
-                    <td>Currency</td>
+                    <td><img src="https://notion-emojis.s3-us-west-2.amazonaws.com/prod/svg-twitter/1f4b2.svg"/> Currency:</td>
                     <td>{currency}</td>
                   </tr>
                   <tr>
-                    <td>Population</td>
+                    <td><img src="https://notion-emojis.s3-us-west-2.amazonaws.com/prod/svg-twitter/1f465.svg" /> Population:</td>
                     <td>{population}</td>
                   </tr>
                   <tr>
-                    <td>Area</td>
+                    <td><img src="https://notion-emojis.s3-us-west-2.amazonaws.com/prod/svg-twitter/1f4d0.svg" /> Area:</td>
                     <td>{area}</td>
                   </tr>
                 </table>

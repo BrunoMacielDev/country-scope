@@ -1,0 +1,44 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-family: sans-serif;
+    border-bottom: solid 0.01rem rgb(211, 211, 211);
+}
+
+.content{
+    padding: 1rem;
+    display: flex;
+
+}
+
+.content p{
+    margin-left: 1rem;
+}
+
+.content p img{
+    height: 15px;
+}
+
+.content svg{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 680px) {
+    .navbar{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 550px) {
+    .navbar{
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 350px) {
+    .navbar{
+        font-size: 10px;
+    }
+}
